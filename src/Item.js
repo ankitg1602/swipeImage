@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Card, Container, Col } from "react-bootstrap";
-import Swiper from "swiper";
-import "swiper/swiper-bundle.css";
+// import Swiper from "swiper";
+// import "swiper/swiper-bundle.css";
+import SwipableList from "./SwipableList";
 
 class Item extends Component {
   render() {
@@ -21,14 +22,17 @@ class Item extends Component {
       //       <Col md={3}>jjh</Col>
       //     </Container>
       //   </Card>
-      <div className="swiper-container">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">Slide 1</div>
-          <div className="swiper-slide">Slide 1</div>
-          <div className="swiper-slide">Slide 1</div>
-          <div className="swiper-slide">Slide 1</div>
-        </div>
-      </div>
+      <>
+        <SwipableList></SwipableList>
+        {/* <div className="swiper-container">
+          <div className="swiper-wrapper">
+            <div className="swiper-slide">Slide 1</div>
+            <div className="swiper-slide">Slide 1</div>
+            <div className="swiper-slide">Slide 1</div>
+            <div className="swiper-slide">Slide 1</div>
+          </div>
+        </div> */}
+      </>
     );
   }
 }
