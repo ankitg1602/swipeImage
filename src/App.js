@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import UserForm from "./UserForm";
+import DashboardTabs from "./DashboardTabs";
 import ReactDOM from "react-dom";
 import { Route, Link, BrowserRouter } from "react-router-dom";
 import OrderDetails from "./OrderDetails";
+// import "swiper/css/swiper.min.css";
 // import ReactDOM from "react-dom";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     // </div>
     <BrowserRouter>
       <div>
-        <Route exact path="/" component={UserForm} />
+        <Route exact path="/" component={DashboardTabs} />
         <Route exact path="/order-details" component={OrderDetails} />
       </div>
       {/* <IndexRoute component={Home} />
