@@ -10,9 +10,9 @@
 }
 
 .basic-swipeable-list__item-content-right {
-    background-color: green;
+    /* background-color: green; */
     box-sizing: border-box;
-    color: white;
+    color: black;
     height: 100%;
     width: 100%;
     display: flex;

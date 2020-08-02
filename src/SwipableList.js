@@ -1,46 +1,3 @@
-// import {
-//   SwipeableList,
-//   SwipeableListItem,
-// } from "@sandstreamdev/react-swipeable-list";
-// import "@sandstreamdev/react-swipeable-list/dist/styles.css";
-// import React, { Component } from "react";
-
-// class SwipableList extends Component {
-//   constructor() {
-//     super();
-//     this.state = {};
-//   }
-//   render() {
-//     return (
-//       <SwipeableList>
-//            <SwipeableListItem
-//             swipeLeft={swipeLeftOptions('Item with swipe left')}
-//             onSwipeEnd={handleSwipeEnd}
-//             onSwipeProgress={handleSwipeProgress}
-//             onSwipeStart={handleSwipeStart}
-//           >
-//             <BasicListItem label="Item with swipe left" />
-//           </SwipeableListItem>
-//         <SwipeableListItem
-//           swipeLeft={{
-//             content: <div>Revealed content during swipe</div>,
-//             action: () => console.info("swipe action triggered"),
-//           }}
-//           swipeRight={{
-//             content: <div>Revealed content during swipe</div>,
-//             action: () => console.info("swipe action triggered"),
-//           }}
-//           onSwipeProgress={(progress) =>
-//             console.info(`Swipe progress: ${progress}%`)
-//           }
-//         >
-//           <div>Item name</div>
-//         </SwipeableListItem>
-//       </SwipeableList>
-//     );
-//   }
-// }
-
 import React, { useState } from "react";
 import {
   SwipeableList,
@@ -64,7 +21,7 @@ const SwipableList = () => {
   });
 
   const swipeLeftOptions = (name) => ({
-    content: <BasicSwipeContent label="Right content" position="right" />,
+    content: <BasicSwipeContent label="Completed" position="right" />,
     action: () => triggerItemAction(`Swipe left action on "${name}"`),
   });
 
