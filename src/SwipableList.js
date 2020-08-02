@@ -22,10 +22,13 @@ const SwipableList = () => {
 
   const swipeLeftOptions = (name) => ({
     content: <BasicSwipeContent label="Completed" position="right" />,
-    action: () => triggerItemAction(`Swipe left action on "${name}"`),
+    action: () => {
+      triggerItemAction(`Swipe left action on "${name}"`)
+    }
   });
 
-  const handleSwipeStart = () => {
+  const handleSwipeStart = (params) => {
+    console.log(params.id, "Completed")
     triggerItemAction("None");
     handleSwipeAction("Swipe started");
   };
@@ -34,55 +37,28 @@ const SwipableList = () => {
     handleSwipeAction("Swipe ended");
     handleSwipeProgress();
   };
-  console.log("todddddd:", todoData);
   return (
     <>
-      {/* <span className="page__action--title">Trigger threshold: 0.5</span> */}
       <div className="basic-swipeable-list__container">
         <SwipeableList>
-          {/* <SwipeableListItem
-            swipeRight={swipeRightOptions("Item with swipe right")}
-            onSwipeEnd={handleSwipeEnd}
-            onSwipeProgress={handleSwipeProgress}
-            onSwipeStart={handleSwipeStart}
-          >
-            <BasicListItem label="Item with swipe right" />
-          </SwipeableListItem> */}
           {todoData.data.map((obj) => {
             return (
               <SwipeableListItem
                 swipeLeft={swipeLeftOptions("Item with swipe left")}
                 onSwipeEnd={handleSwipeEnd}
                 onSwipeProgress={handleSwipeProgress}
-                onSwipeStart={handleSwipeStart}
+                onSwipeStart={() => {
+                  handleSwipeStart(obj)
+                }
+                }
               >
-                <BasicListItem label="Item with swipe left" />
+                <BasicListItem label="Item with swipe left" data={obj} />
               </SwipeableListItem>
             );
           })}
 
-          {/* <SwipeableListItem
-            swipeLeft={swipeLeftOptions("Item with both swipes")}
-            swipeRight={swipeRightOptions("Item with both swipes")}
-            onSwipeEnd={handleSwipeEnd}
-            onSwipeProgress={handleSwipeProgress}
-            onSwipeStart={handleSwipeStart}
-          >
-            <BasicListItem label="Item with both swipes" />
-          </SwipeableListItem>
-          <SwipeableListItem>
-            <BasicListItem label="Item without swipe actions" />
-          </SwipeableListItem> */}
         </SwipeableList>
       </div>
-      {/* <div className="page__summary">
-        <span className="page__action--title">Triggered action:</span>
-        <span className="page__action--value">{triggeredItemAction}</span>
-        <span className="page__action--title">Callback swipe action:</span>
-        <span className="page__action--value">{swipeAction}</span>
-        <span className="page__action--title">Callback swipe progress:</span>
-        <span className="page__action--value">{swipeProgress ?? "-"}%</span>
-      </div> */}
     </>
   );
 };

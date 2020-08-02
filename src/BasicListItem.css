@@ -1,7 +1,20 @@
-.basic-swipeable-list__item {
+/* .basic-swipeable-list__item {
     border-bottom: 1px solid #c4c4c4;
     height: 100px;
     width: 100%;
+    display: flex;
+    align-items: left;
+    padding: 4px 8px;
+    user-select: none;
+    cursor: pointer;
+} */
+
+.basic-swipeable-list__item {
+
+    margin: 1rem auto;
+    height: 130px;
+    width: 80%;
+
     display: flex;
     align-items: left;
     padding: 4px 8px;

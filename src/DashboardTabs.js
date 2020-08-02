@@ -26,6 +26,7 @@ class DashboardTabs extends Component {
 
         <Nav
           variant="pills"
+          className="justify-content-center"
           defaultActiveKey={defaultActiveKey}
           onSelect={(key) => this.handleSelect(key)}
         >
