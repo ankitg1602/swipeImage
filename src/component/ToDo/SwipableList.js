@@ -8,7 +8,7 @@ import "./SwipableList.css";
 import BasicListItem from "./BasicListItem";
 import BasicSwipeContent from "./BasicSwipeContent";
 
-let todoData = require("./todoData.json");
+let todoData = require("./../../data/todoData.json");
 
 const SwipableList = () => {
   const [triggeredItemAction, triggerItemAction] = useState("None");

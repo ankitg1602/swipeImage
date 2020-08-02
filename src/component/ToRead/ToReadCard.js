@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Container, Col } from "react-bootstrap";
-let toRead = require("./ToRead.json");
+let toRead = require("./../../data/ToRead.json");
 
 export default function Item(props) {
   const itemWidth = "300px";
@@ -26,7 +26,7 @@ export default function Item(props) {
                       class="fa fa-arrow-right"
                       style={{
                         fontSize: "20px",
-                        // padding: "16px",
+                        paddingLeft: "20px"
                       }}
                       aria-hidden="true"
                     ></i>

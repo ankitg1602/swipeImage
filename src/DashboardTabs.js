@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Item from "./Item";
-import ToReadCard from "./ToReadCard";
-import SwipableList from "./SwipableList";
+import ToReadCard from "./component/ToRead/ToReadCard";
+import SwipableList from "./component/ToDo/SwipableList";
 
 class DashboardTabs extends Component {
   constructor(props) {
@@ -16,13 +15,12 @@ class DashboardTabs extends Component {
     this.setState({
       defaultActiveKey: activeKey,
     });
-    console.log("activeKey", activeKey);
   };
   render() {
     let defaultActiveKey = this.state.defaultActiveKey;
     return (
       <>
-        <div style={{ textAlign: "center" }}>ACTION ITEMS</div>
+        <div style={{ textAlign: "center", padding: "50px" }}>ACTION ITEMS</div>
 
         <Nav
           variant="pills"
@@ -37,13 +35,11 @@ class DashboardTabs extends Component {
             <Nav.Link eventKey="2">To Read</Nav.Link>
           </Nav.Item>
         </Nav>
-        {/* <Container> */}
         {defaultActiveKey === "1" ? (
           <SwipableList></SwipableList>
         ) : (
-          <ToReadCard />
-        )}
-        {/* </Container> */}
+            <ToReadCard />
+          )}
       </>
     );
   }
